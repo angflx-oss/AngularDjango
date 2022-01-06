@@ -1,0 +1,18 @@
+
+    <div class="form-group">
+        <label>Unidad Regional</label>
+        <span *ngIf="submitted && createUr.invalid"></span>
+        <form ngNativeValidate class="mt-4" [formGroup]="formUr" (ngSubmit)="addUr()">
+            <div class="col-sm-10">
+                <input required type="text" class="form-control" formControlName="name" 
+                placeholder="Ingresa el nombre">
+            </div>
+    
+            <div class="mt-3">
+                <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
+            </div>
+            
+        </form>
+    </div>
+
+

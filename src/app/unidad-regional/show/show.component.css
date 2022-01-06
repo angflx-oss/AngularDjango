@@ -1,0 +1,83 @@
+*{
+    font-family: 'Poppins';
+    color: var(--light);
+}
+body{
+    background-color: var(--main-color);
+}
+.btn{
+    border: 0;
+}
+.btn-primary{
+    background-color: var(--bg-color);
+    
+}
+.btn-primary:hover{
+    background-color: var(--bg-color);
+}
+.filtros{
+    height: 20vh;
+    background-color: var(--bg-color);
+    width: 96%;
+    border-radius: 10px;
+    padding-top: 3vh;
+    
+}
+.filtros h5{
+    padding-bottom: 2vh;
+}
+
+select{
+    width: 25vh;
+    height: 5.3vh;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--main-color);
+}
+option{
+    color: white;
+}
+table{
+    text-align: center;
+    margin-top: 3%;
+}
+input{
+    height: 5.3vh;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+}
+input:active{
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+}
+thead{
+    box-shadow: 5px 10px 25px rgba(0,0,0,0.2);
+    border: none;   
+    border-radius: 10px; 
+  }
+
+  tbody{
+      box-shadow: 5px 10px 38px rgba(0,0,0,0.2);
+  }
+  
+
+  
+  tbody td{
+      border: none;      
+      position: relative;     
+      text-align: center;
+      font-size: 0.8rem;    
+      
+  }
+  .edit{
+      background-color: var(--bg-color);
+      font-size: 0.8rem;
+  }
+  
+  .delete{
+      background-color: var(--sc-color);
+      font-size: 0.8rem;
+  }

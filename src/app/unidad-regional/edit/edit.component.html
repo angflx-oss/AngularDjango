@@ -1,0 +1,15 @@
+<div class="form-group row">
+    <label>Unidad Regional</label>
+    <form class="mt-4" ngNativeValidate [formGroup]="formUr" (ngSubmit)="editUr()">
+        <div class="col-sm-10">
+            <input required type="text" class="form-control" formControlName="name" 
+            placeholder="Ingresa el nombre">
+        </div>
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-dark btn-lg">Editar</button>
+        </div>
+        
+    </form>
+</div>
+

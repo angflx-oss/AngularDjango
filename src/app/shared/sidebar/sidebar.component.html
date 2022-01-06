@@ -1,0 +1,78 @@
+<body>
+    <div class="d-flex">
+        <div id="sidebar-container" class="bg-primary">
+            <div class="logo">
+                <h4 class="text-light">Servicio Social</h4>
+            </div>
+            <div class="menu">
+                <a href="" class="d-block text-light p-3 text-light p-3">
+                    <i class="fi fi-rr-home mr-2 lead mr-2 mr-3"></i>
+                    Dashboard
+                </a>
+                <a href="" class="d-block text-light p-3">
+                    <i class="fi fi-rr-user lead mr-3"></i>
+                    Brigadistas
+                </a>
+                <a href="" class="d-block text-light p-3">
+                    <i class="fi fi-rr-envelope lead mr-3"></i>
+                    Correo
+                </a>
+                <a href="" class="d-block text-light p-3">
+                    <i class="fi fi-rr-stats lead mr-3"></i>
+                    Informes
+                </a>
+                <a href="" class="d-block text-light p-3">
+                    <i class="fi fi-rr-briefcase lead mr-3"></i>
+                    Asesores
+                </a>
+                <a href="" class="d-block text-light p-3">
+                    <i class="fi fi-rr-address-book lead mr-3"></i>
+                    Coordinadores
+                </a>
+                <a href="" class="d-block text-light p-3">
+                    <i class="fi fi-rr-building lead mr-3"></i>
+                    Unidades Receptoras
+                </a>
+                <a href="" class="d-block text-light p-3">
+                    <i class="fi fi-rr-info lead mr-3"></i>
+                    Unidades Academicas
+                </a>
+            </div>
+        </div>
+        <div class="w-100">
+            <nav class="navbar navbar-expand-lg navbar-light mt-2">    
+                <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <img src="assets/cat.jpg" class="img-fluid rounded-circle avatar mr-2">
+                        Angela Félix
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Mi perfil</a>
+                        <a class="dropdown-item" href="#">Tareas</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Cerrar sesión</a>
+                      </div>
+                    </li>
+                   
+                  </ul>
+                 
+                </div>
+            </div>
+              </nav>
+              <div class="content ml-5">
+    
+                <router-outlet></router-outlet>
+            
+            </div>
+        </div>
+          
+    </div>
+</body>
