@@ -12,8 +12,8 @@ import { UnidadRegional } from '../unidadregional.interface';
 export class ShowComponent implements OnInit {
 
   unidadesregionales!:UnidadRegional[];
-  ModalTitle = "Agregar Unidad Regional";
-  ActivateAddEditUrComp:boolean=false;
+  ActivateAdd:boolean=false;
+  ActivateEdit:boolean=false;
   ur:any;
   closeResult!: string;
   urId!:any;
@@ -21,6 +21,7 @@ export class ShowComponent implements OnInit {
   term: any;
   term2: any;
   cName = "Unidades Regionales";
+  ModalTitle!: string;
   constructor(private unidadregionalSvc: UnidadesregionalesService) { }
   
   ngOnInit(): void {
@@ -31,10 +32,17 @@ export class ShowComponent implements OnInit {
       this.ur={
              urId:0,
              urName:""
-           }      
+           }    
+           this.ModalTitle = "Agregar Unidad Regional";
+  
+           this.ActivateAdd=true;
     }
     editClick(id: any) {
       this.urId=id;     
+      this.ActivateEdit=true;
+      this.ModalTitle = "Editar Unidad Regional";
+
+
     }
     
     refreshUrList(){
@@ -47,7 +55,7 @@ export class ShowComponent implements OnInit {
     deleteUr(id:any, iControl:any){      
       if(window.confirm("¿Desea eliminar el registro?")){
         this.unidadregionalSvc.deleteUnidadRegional(id).subscribe((res=>{
-          this.unidadesregionales.splice(iControl,);
+          this.unidadesregionales.splice(iControl);
         }));
       }
       
@@ -55,5 +63,8 @@ export class ShowComponent implements OnInit {
 
     closeClick(){
       this.refreshUrList();
+      this.ActivateAdd=false;
+      this.ActivateEdit=false;
+
     }
 }

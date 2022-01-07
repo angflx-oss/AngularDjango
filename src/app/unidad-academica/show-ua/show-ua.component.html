@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1 class="font-weight-bold mb-0">
-                    Unidades Regionales
+                    Unidades Academicas
                 </h1>
                 <p class="lead text-muted">
                     Lista de información
@@ -29,7 +29,7 @@
           </button>
         </div>
         <div class="modal-body">                                                                                                         
-          <app-add *ngIf="ActivateAdd"></app-add>
+          <app-add-ua *ngIf="ActivateAdd"></app-add-ua>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeClick()">Close</button>
@@ -47,7 +47,7 @@
           </button>
         </div>
         <div class="modal-body">            
-          <app-edit [id]="urId" *ngIf="ActivateEdit"></app-edit>
+          <app-edit-ua [id]="uaId" *ngIf="ActivateEdit"></app-edit-ua>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeClick()">Close</button>
@@ -67,9 +67,9 @@
       <div class="col-lg-3">
           <span>Seleccionar filtro</span>
         <select class="form-select mt-4" [(ngModel)]="term2" name="term2">
-            <option value="" selected>Todos</option>
-            <option *ngFor="let dataItem of unidadesregionales" value={{dataItem.id}}>
-              {{dataItem.name}}
+            <option>--Select--</option>
+            <option *ngFor="let dataItem of unidadesacademicas" value={{dataItem.id}}>
+              {{dataItem.unidadregional}}
             </option>
           </select>
       </div>
@@ -77,7 +77,7 @@
         <span class="text-center">Apartados</span>
         <div class="row mt-4">          
           <div class="col">
-            <button class="btn btn-light opt"><a routerLink="/unidadesacademicas">Unidades Académicas</a></button>
+            <button class="btn btn-light opt"><a routerLink="/unidadesregionales">Unidades Regionales</a></button>
             <button class="btn btn-light opt ml-2">Carreras</button>
           </div>          
         </div>        
@@ -89,20 +89,22 @@
     <thead>
         <tr >
             <th class="col-1">Id</th>
-            <th class="col-2">Name</th>
-            <th class="col-4">Options</th>
+            <th class="col-3">Name</th>
+            <th class="col-4">Unidad Regional</th>
+            <th class="col-7">Options</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let dataItem of unidadesregionales | filter:term | filter:term2; let iControl=index">
+        <tr *ngFor="let dataItem of unidadesacademicas | filter:term | filter:term2; let iControl=index">
             <td class="col-1">{{dataItem.id}}</td>
-            <td class="col-2">{{dataItem.name}}</td>
-            <td class="col-4">
+            <td class="col-3">{{dataItem.name}}</td>
+            <td class="col-4">{{dataItem.unidadregional}}</td>
+            <td class="col-7">
                 <button type="button" class="btn btn-light mr-1 edit" data-toggle="modal" data-target="#exampleModalLong2" (click)="editClick(dataItem.id)" data-backdrop="static" data-keyboard="false">
                     <i class="fi fi-rr-edit"></i>
                     Edit
                 </button>
-                <button type="button" class="btn btn-light mr-1 delete" (click)="deleteUr(dataItem.id, iControl)">
+                <button type="button" class="btn btn-light mr-1 delete" (click)="deleteClick(dataItem.id, iControl)">
                     <i class="fi fi-rr-delete"></i>
                     Delete
                 </button>

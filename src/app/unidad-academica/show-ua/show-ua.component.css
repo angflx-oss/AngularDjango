@@ -37,7 +37,7 @@ select{
     color: white;
 }
 option{
-    color: var(--main-color);
+    color: white
 }
 table{
     text-align: center;

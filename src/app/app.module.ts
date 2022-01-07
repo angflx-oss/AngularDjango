@@ -12,6 +12,11 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { UnidadRegionalComponent } from './unidad-regional/unidad-regional.component';
+import { UaSectionsComponent } from './shared/ua-sections/ua-sections.component';
+import { UnidadAcademicaComponent } from './unidad-academica/unidad-academica.component';
+import { ShowUaComponent } from './unidad-academica/show-ua/show-ua.component';
+import { AddUaComponent } from './unidad-academica/add-ua/add-ua.component';
+import { EditUaComponent } from './unidad-academica/edit-ua/edit-ua.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +24,12 @@ import { UnidadRegionalComponent } from './unidad-regional/unidad-regional.compo
     ShowComponent,
     AddComponent,
     EditComponent,
-    UnidadRegionalComponent
+    UnidadRegionalComponent,
+    UaSectionsComponent,
+    UnidadAcademicaComponent,
+    ShowUaComponent,
+    AddUaComponent,
+    EditUaComponent
   ],
   imports: [
     BrowserModule,

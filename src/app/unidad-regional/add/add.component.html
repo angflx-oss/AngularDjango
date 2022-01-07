@@ -1,6 +1,6 @@
 
     <div class="form-group">
-        <label>Unidad Regional</label>
+        <label class="text-dark ml-3">Unidad Regional</label>
         <span *ngIf="submitted && createUr.invalid"></span>
         <form ngNativeValidate class="mt-4" [formGroup]="formUr" (ngSubmit)="addUr()">
             <div class="col-sm-10">
@@ -8,7 +8,7 @@
                 placeholder="Ingresa el nombre">
             </div>
     
-            <div class="mt-3">
+            <div class="mt-3 ml-3">
                 <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
             </div>
             

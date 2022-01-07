@@ -19,7 +19,7 @@ export class AddComponent implements OnInit {
   id:any;
 
   ngOnInit(): void {
-    
+    console.log("activado");
   }
 
   addUr():any{
@@ -28,7 +28,10 @@ export class AddComponent implements OnInit {
       
     });
     alert("Agregado Correctamente");
-    
+    this.formUr.setValue({
+      name:"",
+      
+    });   
   }
   
 
