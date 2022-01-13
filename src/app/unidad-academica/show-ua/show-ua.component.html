@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1 class="font-weight-bold mb-0">
-                    Unidades Academicas
+                    Unidades Académicas
                 </h1>
                 <p class="lead text-muted">
                     Lista de información
@@ -64,21 +64,21 @@
             placeholder="Buscar...">
           </div>
     </div>
-      <div class="col-lg-3">
-          <span>Seleccionar filtro</span>
-        <select class="form-select mt-4" [(ngModel)]="term2" name="term2">
-            <option>--Select--</option>
-            <option *ngFor="let dataItem of unidadesacademicas" value={{dataItem.id}}>
-              {{dataItem.unidadregional}}
-            </option>
-          </select>
-      </div>
+    <div class="col-lg-3">
+      <span>Seleccionar filtro</span>
+    <select class="form-select mt-4" [(ngModel)]="term2" name="term2">
+        <option value="">--Select--</option>
+        <option *ngFor="let dataItem of unidadesregionales" value={{dataItem.name}}>
+          {{dataItem.name}}
+        </option>
+      </select>
+  </div>
       <div class="col-lg-5 ml-5">
         <span class="text-center">Apartados</span>
         <div class="row mt-4">          
           <div class="col">
             <button class="btn btn-light opt"><a routerLink="/unidadesregionales">Unidades Regionales</a></button>
-            <button class="btn btn-light opt ml-2">Carreras</button>
+            <button class="btn btn-light opt ml-2"><a routerLink="/carreras">Carreras</a></button>
           </div>          
         </div>        
       </div>
@@ -95,7 +95,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let dataItem of unidadesacademicas | filter:term | filter:term2; let iControl=index">
+        <tr *ngFor="let dataItem of unidadesacademicas | paginate: {itemsPerPage: 10, currentPage: page, totalItems:totalLength} | filter:term | filter:term2; let iControl=index">
             <td class="col-1">{{dataItem.id}}</td>
             <td class="col-3">{{dataItem.name}}</td>
             <td class="col-4">{{dataItem.unidadregional}}</td>
@@ -112,8 +112,10 @@
         </tr>
     </tbody>
 </table>
-
+<pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
   </div>
+  
+
         </div>
     </section>
 </body>

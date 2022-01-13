@@ -1,0 +1,103 @@
+*{
+    font-family: 'Poppins';
+    color: var(--light);
+}
+body{
+    background-color: var(--main-color);
+}
+.btn{
+    border: 0;
+}
+.btn-primary{
+    background-color: var(--bg-color);
+    
+}
+.btn-primary:hover{
+    background-color: var(--bg-color);
+}
+.filtros{
+    height: 20vh;
+    background-color: var(--bg-color);
+    width: 100%;
+    border-radius: 10px;
+    padding-top: 3vh;
+    
+}
+.filtros h5{
+    padding-bottom: 2vh;
+}
+
+select{
+    width: 15vh;
+    height: 4.5vh;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    color: white;
+}
+option{
+    color: white
+}
+table{
+    text-align: center;
+    margin-top: 3%;
+    
+}
+input{
+    height: 4.5vh;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+}
+input:active{
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+}
+thead{
+    box-shadow: 5px 10px 25px rgba(0,0,0,0.2);
+    border: none;   
+    border-radius: 10px; 
+    font-size: 0.8rem;
+  }
+
+  tbody{
+      box-shadow: 5px 10px 38px rgba(0,0,0,0.2);
+    
+  }
+  
+
+  
+  tbody td{
+      border: none;      
+      position: relative;     
+      text-align: center;
+      font-size: 0.7rem;    
+      
+  }
+  .edit{
+      background-color: var(--bg-color);
+      font-size: 0.8rem;
+  }
+  
+  .delete{
+      background-color: var(--sc-color);
+      font-size: 0.8rem;
+  }
+  .opt{
+      color: white;
+      font-size: 0.8rem;
+      background-color: var(--main-color);
+      border: 1px solid var(--main-color);
+  }
+  a{
+      text-decoration: none;
+  }
+  a:hover{
+      color: var(--bg-color);
+  }
+  .my-pagination /deep/ .ngx-pagination .current::after {
+    color: white;
+
+  }

@@ -94,3 +94,7 @@ thead{
   a:hover{
       color: var(--bg-color);
   }
+  .my-pagination /deep/ .ngx-pagination .current::after {
+    color: white;
+
+  }

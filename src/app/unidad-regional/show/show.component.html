@@ -64,21 +64,13 @@
             placeholder="Buscar...">
           </div>
     </div>
-      <div class="col-lg-3">
-          <span>Seleccionar filtro</span>
-        <select class="form-select mt-4" [(ngModel)]="term2" name="term2">
-            <option value="" selected>Todos</option>
-            <option *ngFor="let dataItem of unidadesregionales" value={{dataItem.id}}>
-              {{dataItem.name}}
-            </option>
-          </select>
-      </div>
+
       <div class="col-lg-5 ml-5">
         <span class="text-center">Apartados</span>
         <div class="row mt-4">          
           <div class="col">
             <button class="btn btn-light opt"><a routerLink="/unidadesacademicas">Unidades Académicas</a></button>
-            <button class="btn btn-light opt ml-2">Carreras</button>
+            <button class="btn btn-light opt ml-2"><a routerLink="/carreras">Carreras</a></button>
           </div>          
         </div>        
       </div>
@@ -94,7 +86,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let dataItem of unidadesregionales | filter:term | filter:term2; let iControl=index">
+        <tr *ngFor="let dataItem of unidadesregionales | paginate: {itemsPerPage: 10, currentPage: page, totalItems:totalLength} | filter:term | filter:term2; let iControl=index">
             <td class="col-1">{{dataItem.id}}</td>
             <td class="col-2">{{dataItem.name}}</td>
             <td class="col-4">
@@ -110,6 +102,7 @@
         </tr>
     </tbody>
 </table>
+<pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
 
   </div>
         </div>

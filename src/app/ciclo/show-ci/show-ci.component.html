@@ -1,0 +1,129 @@
+<body>
+    <section class="py-3 pl-3 pr-3">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="font-weight-bold mb-0">
+                    Ciclos
+                </h1>
+                <p class="lead text-muted">
+                    Lista de información
+                </p>
+            </div>
+            <div class="col-lg-3 d-flex ml-1">
+                <button type="button" class="btn btn-primary w-100 align-self-center"  data-toggle="modal" data-target="#exampleModalLong" (click)="addClick()" data-backdrop="static" data-keyboard="false">
+                    Agregar Ciclo 
+                  </button>
+            </div>
+        </div>    
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="exampleModalLongTitle">{{ModalTitle}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">                                                                                                         
+          <app-add-ci *ngIf="ActivateAdd"></app-add-ci>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeClick()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="exampleModalLongTitle">{{ModalTitle}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">            
+          <app-edit-ci [id]="cicloId" *ngIf="ActivateEdit"></app-edit-ci>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeClick()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row filtros d-flex mt-3">
+    <div class="col-lg-3">
+        <h5>Filtros</h5>
+        <div class="filterId">
+            <input type="text" [(ngModel)]="term" class="form-control" name="term" 
+            placeholder="Buscar...">
+          </div>
+    </div>
+      <div class="col-lg-3">
+          <span>Seleccionar filtro</span>
+        <select class="form-select mt-4" [(ngModel)]="term2" name="term2">
+            <option value="">--Todos--</option>
+            <option *ngFor="let dataItem of status" value={{dataItem.name}}>
+              {{dataItem.name}}
+            </option>
+          </select>
+      </div>
+      <div class="col-lg-5 ml-5">
+        <span class="text-center">Apartados</span>
+        <div class="row mt-4">          
+          <div class="col">
+            <button class="btn btn-light opt"><a routerLink="/unidadesreceptoras">Unidades Receptoras</a></button>
+            <button class="btn btn-light opt ml-2"><a routerLink="">Brigadistas</a></button>
+          </div>          
+        </div>        
+      </div>
+  </div>
+  <div class="row d-flex justify-content-center mr-5">
+      
+  <table class="table">
+    <thead>
+        <tr >
+            <th class="col-1">Id</th>
+            <th class="col-1">Ciclo</th>
+            <th class="col-1">Fase</th>
+            <th class="col-1">Inicio</th>
+            <th class="col-1">Fin</th>
+            <th class="col-1">Informes</th>            
+            <th class="col-1">Status</th>
+            <th class="col-1">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of ciclos | paginate: {itemsPerPage: 10, currentPage: page, totalItems:totalLength} | filter:term | filter:term2; let iControl=index">
+            <td class="col-1">{{dataItem.id}}</td>
+            <td class="col-1">{{dataItem.name}}</td>
+            <td class="col-1">{{dataItem.fase}}</td>
+            <td class="col-1">{{dataItem.inicio}}</td>
+            <td class="col-1">{{dataItem.fin}}</td>
+            <td class="col-1">{{dataItem.numdeinformes}}</td>
+            <td class="col-1">{{dataItem.status}}</td>
+            <td class="col-1">
+                <button type="button" class="btn btn-light mr-1 edit" data-toggle="modal" data-target="#exampleModalLong2" (click)="editClick(dataItem.id)" data-backdrop="static" data-keyboard="false">
+                    <i class="fi fi-rr-edit"></i>
+                    
+                </button>
+                <button type="button" class="btn btn-light mr-1 delete" (click)="deleteClick(dataItem.id, iControl)">
+                    <i class="fi fi-rr-delete"></i>
+                    
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+  </div>
+  
+
+        </div>
+    </section>
+</body>

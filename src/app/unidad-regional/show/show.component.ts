@@ -22,6 +22,9 @@ export class ShowComponent implements OnInit {
   term2: any;
   cName = "Unidades Regionales";
   ModalTitle!: string;
+  totalLength:any;
+  page:number = 1;
+
   constructor(private unidadregionalSvc: UnidadesregionalesService) { }
   
   ngOnInit(): void {
@@ -48,6 +51,7 @@ export class ShowComponent implements OnInit {
     refreshUrList(){
       this.unidadregionalSvc.getUnidadesRegionales().subscribe(x => {
         this.unidadesregionales = x;
+        this.totalLength = x.length;
         console.log(this.unidadesregionales);
       });
     }

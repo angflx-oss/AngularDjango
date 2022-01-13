@@ -1,0 +1,127 @@
+<body>
+    <section class="py-3 pl-3 pr-3">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="font-weight-bold mb-0">
+                    {{titlePlural}}
+                </h1>
+                <p class="lead text-muted">
+                    Lista de información
+                </p>
+            </div>
+            <div class="col-lg-3 d-flex ml-1">
+                <button type="button" class="btn btn-primary w-100 align-self-center"  data-toggle="modal" data-target="#exampleModalLong" (click)="addClick()" data-backdrop="static" data-keyboard="false">
+                    Agregar {{title}} 
+                  </button>
+            </div>
+        </div>    
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="exampleModalLongTitle">{{ModalTitle}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">                                                                                                         
+          <app-add-asesor *ngIf="ActivateAdd"></app-add-asesor>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeClick()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="exampleModalLongTitle">{{ModalTitle}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">            
+          <app-edit-asesor [id]="asesorId" *ngIf="ActivateEdit"></app-edit-asesor>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeClick()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row filtros lg-8 mt-3">
+    <div class="col-lg-2">
+        <h5>Filtros</h5>
+        <div class="filterId">
+            <input type="text" [(ngModel)]="term" class="form-control" name="term" 
+            placeholder="Buscar...">
+          </div>
+    </div>
+ 
+      <div class="col-lg-3">
+        <span>Unidad Académica</span>
+      <select class="form-select mt-4" [(ngModel)]="term2" name="term2">
+          <option value="">--Todos--</option>
+          <option *ngFor="let dataItem of unidadesacademicas" value={{dataItem.name}}>
+            {{dataItem.name}}
+          </option>
+        </select>
+    </div>
+      <div class="col-lg-6 ml-5">
+        <span class="text-center">Apartados</span>
+        <div class="row mt-4">          
+          <div class="col">
+            <button class="btn btn-light opt"><a routerLink="/unidadesreceptoras">Unidades Académicas</a></button>            
+          </div>          
+        </div>        
+      </div>
+  </div>
+  <div class="row d-flex justify-content-center mr-5">
+      
+  <table class="table">
+    <thead>
+        <tr >
+            <th class="col-1">Id</th>
+            <th class="col-1">Nombre</th>            
+            <th class="col-1">Status</th>            
+            <th class="col-1">Teléfono</th>            
+            <th class="col-1">Correo</th>            
+            <th class="col-1">Unidad Acádemica</th>            
+            <th class="col-1">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of asesores | paginate: {itemsPerPage: 10, currentPage: page, totalItems:totalLength} | filter:term | filter:term2; let iControl=index">
+            <td class="col-1">{{dataItem.id}}</td>
+            <td class="col-1">{{dataItem.name}} {{dataItem.apellido1}} {{dataItem.apellido2}}</td>            
+            <td class="col-1">{{dataItem.status}}</td>  
+            <td class="col-1">{{dataItem.telefono}}</td>  
+            <td class="col-1">{{dataItem.correo}}</td>  
+            <td class="col-1">{{dataItem.unidadacademica}}</td>  
+            <td class="col-1">
+                <button type="button" class="btn btn-light mr-1 edit" data-toggle="modal" data-target="#exampleModalLong2" (click)="editClick(dataItem.id)" data-backdrop="static" data-keyboard="false">
+                    <i class="fi fi-rr-edit"></i>
+                    
+                </button>
+                <button type="button" class="btn btn-light mr-1 delete" (click)="deleteClick(dataItem.id, iControl)">
+                    <i class="fi fi-rr-delete"></i>
+                    
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+  </div>
+  
+
+        </div>
+    </section>
+</body>

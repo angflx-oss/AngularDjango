@@ -12,6 +12,7 @@ import { UnidadAcademica } from '../unidadacademica.interface';
 export class ShowUaComponent implements OnInit {
 
   unidadesacademicas!:UnidadAcademica[];
+  unidadesregionales!:UnidadRegional[];
   ActivateAdd:boolean=false;
   ActivateEdit:boolean=false;
   ua:any;  
@@ -21,11 +22,15 @@ export class ShowUaComponent implements OnInit {
   term: any;
   term2: any;
   ModalTitle!: string;
+  totalLength:any;
+  page:number = 1;
 
   constructor(private service: UnidadesAcademicasService) { }
   
   ngOnInit(): void {
+    this.loadList();
     this.refreshUaList();    
+
     
     }
     addClick() {
@@ -67,5 +72,10 @@ export class ShowUaComponent implements OnInit {
       this.ActivateAdd=false;
       this.ActivateEdit=false;
 
+    }
+    loadList(){
+      this.service.getUnidadesRegionales().subscribe((data:any)=>{
+        this.unidadesregionales=data;
+      });
     }
 }
