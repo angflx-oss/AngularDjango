@@ -55,7 +55,24 @@
       </div>
     </div>
   </div>
-
+  <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="exampleModalLongTitle">{{ModalTitle}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">                                                                                                         
+          <app-mail-brigadista></app-mail-brigadista>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeClick()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row filtros lg-12 mt-3">
     <div class="col-lg-2">
         <h5>Filtros</h5>
@@ -151,7 +168,7 @@
                       <i class="fi fi-rr-delete"></i>
                       
                   </button>
-                  <button type="button" class="btn btn-light mr-1 delete" (click)="deleteClick(dataItem.id, iControl)">
+                  <button type="button" class="btn btn-light mr-1 edit" data-toggle="modal" data-target="#exampleModalLong3"  data-backdrop="static" data-keyboard="false">
                       <i class="fi fi-rr-envelope"></i>
                       
                   </button>

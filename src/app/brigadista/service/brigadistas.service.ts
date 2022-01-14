@@ -58,4 +58,7 @@ export class BrigadistasService {
   updateBrigadista(id:any,data:Brigadista):Observable<any>{
     return this.http.post(this.APIUrl +'/api/brigadista-update/'+id,data);
   }
+  sendMessage(body: any) {
+    return this.http.post('http://localhost:3000/sendmail', body);
+    }
 }

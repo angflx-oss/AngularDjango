@@ -56,6 +56,7 @@ import { ShowPrebrigradistaComponent } from './brigadista/show-prebrigradista/sh
 import { EditPrebrigradistaComponent } from './brigadista/edit-prebrigradista/edit-prebrigradista.component';
 import { AddPrebrigradistaComponent } from './brigadista/add-prebrigradista/add-prebrigradista.component';
 import { MailBrigadistaComponent } from './brigadista/mail-brigadista/mail-brigadista.component';
+import { BrigadistasService } from './brigadista/service/brigadistas.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -117,7 +118,7 @@ import { MailBrigadistaComponent } from './brigadista/mail-brigadista/mail-briga
     Ng2SearchPipeModule,
    
   ],
-  providers: [],
+  providers: [BrigadistasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
