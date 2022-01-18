@@ -1,0 +1,36 @@
+body{
+    display: block;
+    
+}
+.container{
+    
+    margin-top: 10%;
+    width: 70vh;
+    height: 70vh;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #282c36;
+    justify-content: space-between;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+.form-group{
+    margin-left: 5vh;
+}
+.titles{
+    margin-left: 25%;
+    text-align: center;
+}
+.in{
+    margin-left: 15%;
+}
+button{
+    margin-left: 22%;
+    margin-top: 10%;
+    width: 25vh;
+    background-color: #6C5DD3;
+    border: none;
+}

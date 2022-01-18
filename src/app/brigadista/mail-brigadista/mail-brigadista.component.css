@@ -1,0 +1,480 @@
+
+.example-list {
+    width: 55vh;    
+    min-height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .example-box {
+    padding: 5px 5px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    background: var(--bg-color);
+    cursor: move;
+    color: white;
+    border-radius: 3%;
+    margin-left: 2%;
+    font-size: 14px;
+  }
+  
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .example-box:last-child {
+    border: none;
+  }
+  
+  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  select{
+    width: 55vh;
+    height: 4.5vh;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    color: white;
+}
+body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Poppins';
+}
+.nav-bar{
+  width: 30vh;
+  height: 100%;    
+  padding-top: 3%;    
+  box-shadow: 5px 10px 38px rgba(0,0,0,0.2);
+}
+li{
+  margin-top: 10%;
+  list-style: none;   
+  margin-bottom: 15%;     
+}
+li a{    
+  text-decoration: none;
+  font-family: 'Poppins';
+  /* color: rgb(130, 141, 141); */
+  color: #5F6368;
+  font-size: 1rem;    
+  padding: 15px;
+  letter-spacing: 1px;
+  
+}
+li a:hover{
+  color: white;
+  background-color: black;
+  border-radius: 0 10px 0 10px;
+}
+.logo a{        
+  text-decoration: none;
+  font-family: 'Oswald';
+  font-size: 1.3rem;    
+  color: #47494d;
+  font-weight: 600;    
+  padding-left: 8%;        
+}
+.logo{
+width: 30vh;
+height: 10vh;    
+padding-top: 5%;
+}
+img{
+  width: 20%;
+  background-color: rgba(95, 158, 160, 0.445);
+  padding: 5px;
+  border-radius: 50%;
+}
+.container{
+  
+  width: 180vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  justify-content: space-between;
+}
+.header > .title h1{
+  font-family: 'Poppins';
+  font-size: 2rem;
+  padding-left: 5%;
+  color: rgb(130, 141, 141);
+
+}
+.options-right {
+  width: 40vh;
+  display: flex;
+  flex-direction: row;    
+  justify-content: space-between;
+  
+}
+.options-right button{
+  border-radius: 5%;
+  border: none;
+  color: cadetblue;
+  font-weight: 500;
+  font-size: 0.9rem;
+  background-color: rgba(95, 158, 160, 0.199);
+}
+.options-right img{
+  width: 15%;        
+}
+.options-right .user{
+  width: 25%;
+  height: 100%;    
+  border-radius: 50%;
+  background-color: white;
+}
+button.user img{
+  width: 100%;
+}
+.options{
+  display: flex;
+  flex-direction: row;    
+  height: 12vh;    
+  background-color: #f0d6da;  
+  border-radius: 1%;
+}
+.options-title h2{
+  padding: 20px;
+  font-size: 1.5rem;
+  color: #bd848c;
+}
+h4{
+  font-size: 1rem;
+  padding-left: 20px;
+  color: #5354AD;
+}
+.boxes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border:rgb(130, 141, 141) 1px solid; */
+  margin-top: 2%;
+  width: 150vh;
+  height: 18vh;    
+}
+.box1 .dropbtn {
+  background-color: #5354AD;
+  color: white;
+  padding: 5px;
+  font-size: 11px;
+  border: none;
+  margin-left: 11px;
+  width: 18vh;
+  height: 5vh;
+  border-radius: 4px;
+}
+
+.box2 .dropbtn {
+  background-color: #9EA3DF;
+  color: white;
+  padding: 5px;
+  font-size: 11px;
+  border: none;
+  margin-left: 11px;
+  width: 18vh;
+  height: 5vh;
+  border-radius: 4px;
+}
+.box4 .dropbtn {
+  background-color: #F78992;
+  color: white;
+  padding: 5px;
+  font-size: 11px;
+  border: none;
+  margin-left: 11px;
+  width: 18vh;
+  height: 5vh;
+  border-radius: 4px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #bd848c;}
+input{
+    width: 90vh;
+    height: 5vh;
+    border: solid 1px #718CFF;
+    background: #F5E9EB;
+    margin-bottom: 3%;
+}
+.box3 button{
+  background-color: #718CFF;
+  color: white;
+  padding: 5px;
+  font-size: 11px;
+  border: 1px solid #718CFF;    
+  width: 10vh;
+  height: 5vh;
+  border-radius: 4px;
+}
+td button{
+  background-color: #bd848c;
+  color: white;
+  padding: 5px;    
+  border: none;
+  width: 12vh;
+  height: 4vh;
+  border-radius: 4px;
+}
+.imagen img{
+    width: 33vh;
+    background: transparent;
+    border-radius: 0%;
+    margin-left: 20%;
+    height: 33vh;
+}
+.imagen{
+    width: 62vh;
+    height: 30vh;
+}
+.list{
+    width: 160vh;
+    
+}
+table{
+  margin-top: 3%;
+  height: 100%;
+  position: relative;
+  
+}
+thead{
+  box-shadow: 5px 10px 38px rgba(0,0,0,0.2);
+  border: none;   
+  border-radius: 10px; 
+  color: rgb(72, 75, 75);
+  
+}
+tbody tr{
+  border: none;    
+  /* box-shadow: 5px 10px 38px rgba(0,0,0,0.2); */
+  border-radius: 10px; 
+  height:11vh;    
+  
+}
+tbody{
+    box-shadow: 5px 10px 38px rgba(0,0,0,0.2);
+}
+
+thead tr{
+    height: 60px;
+    border: none;   
+    text-align: center;   
+}
+
+tbody td{
+    border: none;      
+    position: relative;
+    top: 0.5rem;   
+    width: 160vh;  
+    text-align: center;
+    font-size: 0.8rem;    
+    padding: 1%;  
+}
+td button.A1{
+  background-color: #5354AD;
+  color: white;    
+  font-size: 16px;
+  border: none;    
+  width: 4vh;
+  height: 4vh;
+  border-radius: 4px;
+}
+td button.A2{
+  background-color: #9EA3DF;
+  color: white;    
+  font-size: 16px;
+  border: none;    
+  width: 4vh;
+  height: 4vh;
+  border-radius: 4px;
+}
+td button.A3{
+  background-color:#F78992;
+  color: white;    
+  font-size: 16px;
+  border: none;    
+  width: 4vh;
+  height: 4vh;
+  border-radius: 4px;
+}
+td button.A4{
+  background-color:#718CFF;
+  color: white;    
+  font-size: 16px;
+  border: none;    
+  width: 4vh;
+  height: 4vh;
+  border-radius: 4px;
+}
+button.inf{
+    background-color: #bd848c;
+    color: white;
+    border: none;
+    width: 10vh;
+    height: 5vh;
+    border-radius: 4px;
+}
+.mailSection{
+    width: 160vh;
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+}
+.mail-preview{
+    width: 50vh;            
+}
+.preview{
+    width: 50vh;
+    height: 20vh;
+    border: 1px solid#5354AD;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 5px 10px 38px rgba(0,0,0,0.2);
+    margin-top: 1%;
+}
+.preview h2{
+  font-size: 1.2rem;
+  color: #5354AD;
+}
+.preview h3{
+  font-size: 1rem;
+  padding: 0;
+}
+h4{
+  font-size: 1rem;
+  padding: 0;
+  
+}
+.preview p{
+  color: rgb(101, 104, 104);
+  font-size: 0.8rem;    
+}
+.mail-body{
+  margin-left: 3%;
+  width: 100vh;
+  box-shadow: 5px 10px 38px rgba(0,0,0,0.2);
+  padding: 50px;
+  border-radius: 10px;
+}
+.mail-body h2{
+  color: #5354AD;
+}
+.mail-body h3{
+  padding: 0;
+  margin-top: 5%;    
+}
+.mail-body p{
+  margin-top: 5%;
+  font-size: 0.9rem;
+}
+.answer{
+  width: 100vh;
+}
+.boxesT{
+  width: 90vh;
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* border:rgb(130, 141, 141) 1px solid; */
+}
+.boxesT > .box1 .dropbtn {
+  background-color: #5354AD;
+  color: white;
+  padding: 5px;
+  font-size: 11px;
+  border: none;    
+  width: 20vh;
+  height: 5vh;
+  margin-top: 3%;
+  border-radius: 4px;
+}
+
+.boxesT > .box2 .dropbtn {
+  background-color: #9EA3DF;
+  color: white;
+  padding: 5px;
+  font-size: 11px;
+  border: none;    
+  width: 20vh;
+  height: 5vh;
+  border-radius: 4px;
+  margin-top: 3%;
+}
+.boxesT > .box4 .dropbtn {
+  background-color: #F78992;
+  color: white;
+  padding: 5px;
+  font-size: 11px;
+  border: none;
+  width: 15vh;
+  height: 5vh;
+  border-radius: 4px;
+  margin-top: 3%;
+}
+textarea{
+    width: 90vh;
+    height: 30vh;
+    border:1px solid #9EA3DF;
+    border-radius: 10px;
+}
+.send{
+    margin-top: 2%;
+    text-align: center;
+}

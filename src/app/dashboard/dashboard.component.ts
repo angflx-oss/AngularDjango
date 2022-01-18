@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { BrigadistasService } from '../service/brigadistas.service';
-import { Brigadista } from '../brigadista';
+import { Brigadista } from '../brigadista/brigadista';
+import { GeneralService } from '../services/general.service';
 
 @Component({
-  selector: 'app-show-brigadista',
-  templateUrl: './show-brigadista.component.html',
-  styleUrls: ['./show-brigadista.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class ShowBrigadistaComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
-  brigadistas!:Brigadista[];  
   ciclos!:any[];
   status!:any[];
   carreras!:any[];
@@ -19,7 +18,9 @@ export class ShowBrigadistaComponent implements OnInit {
   dependencias!:any[];
   unidadesreceptoras!:any[];
   documentos!:any[];
-
+  brigadistas!:Brigadista[];
+  brigadistasCount!:any[];
+  addBrigadista!:Brigadista[];
   
   ActivateAdd:boolean=false;
   ActivateEdit:boolean=false;
@@ -27,15 +28,18 @@ export class ShowBrigadistaComponent implements OnInit {
   brigadista:any;  
   brigadistaId!:any;
   name!:any;  
+  count=0;  
+  countCiclos=0;  
   
   
-  term: any;
+  term = "Activo";
   term2: any;
   ModalTitle!: string;
   totalLength:any;
   page:number = 1;
+  
 
-  constructor(private service: BrigadistasService) { }
+  constructor(private service: GeneralService) { }
   title="Brigadista";
   titlePlural="Brigadistas";
 
@@ -45,32 +49,7 @@ export class ShowBrigadistaComponent implements OnInit {
     
     }
 
-
-    addClick() {
-      this.brigadista={
-             id:0,
-             numerodecuenta:"",
-             name:"",
-             apellido1:"",
-             apellido2:"",
-             ciclo:"",
-             status:"",
-             correo:"",
-             telefono:"",
-             carrera:"",
-             unidadacademica:"",
-             proyecto:"",
-             departamento:"",
-             dependencia:"",
-             unidadreceptora:"",
-             inicio:"",
-             fin:"",
-             documento:""  
-           }    
-           this.ModalTitle = "Agregar "+this.title;
-  
-           this.ActivateAdd=true;
-    }
+    
     editClick(id: any) {
       this.brigadistaId=id;     
       this.ActivateEdit=true;
@@ -84,10 +63,7 @@ export class ShowBrigadistaComponent implements OnInit {
 
     }
     refreshDataList(){
-      this.service.getBrigadistas().subscribe(x => {
-        this.brigadistas = x;
-        
-      });
+      
     }
 
     deleteClick(id:any, iControl:any){      
@@ -97,7 +73,7 @@ export class ShowBrigadistaComponent implements OnInit {
         }));
       }
       
-    }
+    }   
 
     closeClick(){
       this.refreshDataList();
@@ -107,14 +83,38 @@ export class ShowBrigadistaComponent implements OnInit {
     }
 
     loadList(){
-      this.service.getCiclos().subscribe(x => {
-        this.ciclos = x;        
+      this.service.getBrigadistas().subscribe(x => {
+        this.brigadistas = x;         
+        // const arr = this.brigadistas.map(elemento => Object.entries(elemento));
+        // this.count = arr[0][6];
+        for(let i = 0; i < this.brigadistas.length; i++) {
+          console.log(this.brigadistas[i].status);  // (o el campo que necesites)
+          if(this.brigadistas[i].status == "Brigadista"){
+            this.count +=1;
+          }
+      }                
       });
+      this.service.getCiclos().subscribe(x => {
+        this.ciclos = x;         
+        // const arr = this.brigadistas.map(elemento => Object.entries(elemento));
+        // this.count = arr[0][6];
+        for(let i = 0; i < this.ciclos.length; i++) {
+          console.log(this.ciclos[i].status);  // (o el campo que necesites)
+          if(this.ciclos[i].status == "Activo"){
+            this.countCiclos +=1;
+          }
+      }                
+      });
+      
+      this.service.getBrigadistaCount().subscribe(x => {
+        this.brigadistasCount = x;                       
+      });   
       this.service.getStatus().subscribe(x => {
         this.status = x;        
       });
-      this.service.getCarreras().subscribe(x => {
-        this.carreras = x;        
+      this.service.getCiclos().subscribe(x => {
+        this.ciclos = x;        
+        
       });
       this.service.getUnidadesAcademicas().subscribe(x => {
         this.unidadesacademicas = x;        

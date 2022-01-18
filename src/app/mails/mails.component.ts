@@ -1,19 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { BrigadistasService } from '../service/brigadistas.service';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { BrigadistasService } from '../brigadista/service/brigadistas.service';
 
 @Component({
-  selector: 'app-mail-brigadista',
-  templateUrl: './mail-brigadista.component.html',
-  styleUrls: ['./mail-brigadista.component.css']
+  selector: 'app-mails',
+  templateUrl: './mails.component.html',
+  styleUrls: ['./mails.component.css']
 })
-export class MailBrigadistaComponent implements OnInit {
-  
-  @Input() id:any;  
-  
+export class MailsComponent implements OnInit {
+
   constructor(public _MessageService: BrigadistasService,  private builder: FormBuilder, private activeRoute:ActivatedRoute) {
     this.formData=this.builder.group({
       subject:[''],
@@ -42,23 +38,20 @@ export class MailBrigadistaComponent implements OnInit {
     alert("Enviado Correctamente");
  
   }
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.tags, event.previousIndex, event.currentIndex);
-  }
 
   
   getData(){
-    this._MessageService.getBrigadista(this.id).subscribe(
-      res=>{
+    // this._MessageService.getBrigadista(this.id).subscribe(
+    //   res=>{
          
-        this.formData.setValue({  
-          subject:[''],
-          message:[''],
-          email:res['correo'],
+    //     this.formData.setValue({  
+    //       subject:[''],
+    //       message:[''],
+    //       email:res['correo'],
 
-        });          
-      }        
-    );    
+    //     });          
+    //   }        
+    // );    
 }
   loadData(){
     this._MessageService.getTag().subscribe(x => {
@@ -66,12 +59,6 @@ export class MailBrigadistaComponent implements OnInit {
       this.tags = x;        
     });
 }
-
-
-public options = {
-  readonly: undefined,
-  placeholder: '+ Tag'
-};
 
 
 }

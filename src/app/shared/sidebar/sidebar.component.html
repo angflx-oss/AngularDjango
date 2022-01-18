@@ -5,7 +5,7 @@
                 <h4 class="text-light">Servicio Social</h4>
             </div>
             <div class="menu">
-                <a href="" class="d-block text-light p-3 text-light p-3">
+                <a routerLink="/dashboard" class="d-block text-light p-3 text-light p-3">
                     <i class="fi fi-rr-home mr-2 lead mr-2 mr-3"></i>
                     Dashboard
                 </a>
@@ -17,14 +17,11 @@
                     <i class="fi fi-rr-chart-set-theory lead mr-3"></i>
                     Ciclos
                 </a>
-                <a href="" class="d-block text-light p-3">
+                <a routerLink="/mail" class="d-block text-light p-3">
                     <i class="fi fi-rr-envelope lead mr-3"></i>
                     Correo
                 </a>
-                <a href="" class="d-block text-light p-3">
-                    <i class="fi fi-rr-stats lead mr-3"></i>
-                    Informes
-                </a>
+       
                 <a routerLink="/asesores" class="d-block text-light p-3">
                     <i class="fi fi-rr-briefcase lead mr-3"></i>
                     Asesores
@@ -33,7 +30,7 @@
                     <i class="fi fi-rr-address-book lead mr-3"></i>
                     Coordinadores
                 </a>
-                <a href="" class="d-block text-light p-3">
+                <a routerLink="/unidadesreceptoras" class="d-block text-light p-3">
                     <i class="fi fi-rr-building lead mr-3"></i>
                     Unidades Receptoras
                 </a>
@@ -44,7 +41,7 @@
             </div>
         </div>
         <div class="w-100">
-            <nav class="navbar navbar-expand-lg navbar-light mt-2">    
+            <nav class="navbar navbar-expand-lg navbar-light mt-1">    
                 <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -56,7 +53,7 @@
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <img src="assets/cat.jpg" class="img-fluid rounded-circle avatar mr-2">
-                        Angela Félix
+                        Admin
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Mi perfil</a>
@@ -71,7 +68,7 @@
                 </div>
             </div>
               </nav>
-              <div class="content ml-5">
+              <div class="content ml-3">
     
                 <router-outlet></router-outlet>
             

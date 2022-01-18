@@ -1,0 +1,114 @@
+
+<div class="container">
+    
+    <h5 class="text-dark mb-2">Buscar Brigadista</h5>
+<select [(ngModel)]="keyword" class="mt-3 ml-5">
+    <option *ngFor="let item of keywords" [value]="item">{{item}}</option>
+</select>
+<div class="ng-autocomplete">
+<ng-autocomplete 
+  [data]="data"
+  [searchKeyword]="keyword"
+  (selected)='selectEvent($event)'
+  (inputChanged)='onChangeSearch($event)'
+  (inputFocused)='onFocused($event)'
+  [itemTemplate]="itemTemplate"
+  [notFoundTemplate]="notFoundTemplate"
+  >                                 
+</ng-autocomplete>
+
+<ng-template #itemTemplate let-item>
+<span [innerHTML]="item.name"> </span>,
+<span [innerHTML]="item.apellido1"> </span>,
+<span [innerHTML]="item.apellido2"> </span>
+
+
+</ng-template>
+
+<ng-template #notFoundTemplate let-notFound>
+<div [innerHTML]="notFound"></div>
+</ng-template>
+</div>
+<form  [formGroup]="formData">
+<div class="container2 w-100" *ngIf="activate">
+    <div class="row align-items-start">
+        <div class="col-sm-10 ml-4 mt-3">
+            <button class="btn btn-sm btn-primary">Enviar Correo</button>    
+        </div>        
+        <div class="col-sm-5 ml-4">
+        <label for="" class="text-dark col-form-label mt-3">No. de Cuenta</label>    
+        <input required type="text" class="form-control" formControlName="numdecuenta" placeholder="">
+        </div>
+        <div class="col-sm-5">
+        <label for="" class="text-dark col-form-label mt-3">Ciclo</label>    
+        <input required type="text" class="form-control" formControlName="ciclo" placeholder="">
+        </div>
+        <div class="col-sm-5 ml-4">
+            <label for="" class="text-dark col-form-label mt-3">Nombre</label>    
+            <input required type="text" class="form-control" formControlName="nombre" placeholder="">
+            </div>
+            <div class="col-sm-5">
+            <label for="" class="text-dark col-form-label mt-3">Apellidos</label>    
+            <input required type="text" class="form-control" formControlName="apellido1" placeholder="">
+            </div>
+            <div class="col-sm-5 ml-4">
+                <label for="" class="text-dark col-form-label mt-3">Correo</label>    
+                <input required type="text" class="form-control" formControlName="mail" placeholder="">
+                </div>
+                <div class="col-sm-5">
+                <label for="" class="text-dark col-form-label mt-3">Telefono</label>    
+                <input required type="text" class="form-control" formControlName="phone" placeholder="">
+            </div>
+            <div class="col-lg-11 ml-4">
+                <label for="" class="text-dark col-form-label mt-3">Status</label>    
+                <input required type="text" class="form-control col-lg-11" formControlName="status" placeholder="">
+                </div>
+                <div class="col-lg-11 ml-4">
+                    <label for="" class="text-dark col-form-label mt-3">Carrera</label>    
+                    <input required type="text" class="form-control col-lg-11" formControlName="carrera" placeholder="">
+                </div>
+                <div class="col-lg-11 ml-4">
+                    <label for="" class="text-dark col-form-label mt-3">Unidad Académica</label>    
+                    <input required type="text" class="form-control col-lg-11" formControlName="unidadacademica" placeholder="">
+                </div>
+                <div class="col-lg-11 ml-4">
+                    <label for="" class="text-dark col-form-label mt-3">Unidad Receptora</label>    
+                    <input required type="text" class="form-control col-lg-11" formControlName="unidadreceptora" placeholder="">
+                </div>
+                <div class="col-lg-11 ml-4">
+                    <label for="" class="text-dark col-form-label mt-3">Dependencia</label>    
+                    <input required type="text" class="form-control col-lg-11" formControlName="dependencia" placeholder="">
+                </div>
+                <div class="col-lg-11 ml-4">
+                    <label for="" class="text-dark col-form-label mt-3">Departamento</label>    
+                    <input required type="text" class="form-control col-lg-11" formControlName="departamento" placeholder="">
+                </div>
+                <div class="col-lg-11 ml-4">
+                    <label for="" class="text-dark col-form-label mt-3">Proyecto</label>    
+                    <input required type="text" class="form-control col-lg-11" formControlName="proyecto" placeholder="">
+                </div>
+                <div class="col-sm-5 ml-4">
+                    <label for="" class="text-dark col-form-label mt-3">Inicio</label>    
+                    <input required type="date" class="form-control" formControlName="inicio" placeholder="">
+                    </div>
+                    <div class="col-sm-5">
+                    <label for="" class="text-dark col-form-label mt-3">Fin</label>    
+                    <input required type="date" class="form-control" formControlName="fin" placeholder="">
+                </div>
+                <div class="col-sm-5 ml-4">
+                    <label for="" class="text-dark col-form-label mt-3">Documento</label>    
+                    <input required type="text" class="form-control" formControlName="documento" placeholder="">
+                    </div>
+                    <div class="col-sm-5">
+                    <label for="" class="text-dark col-form-label mt-3">No. de informe</label>    
+                    <input required type="text" class="form-control" formControlName="numerodeinforme" placeholder="">
+                </div>
+                
+    </div>
+
+    
+
+</div>
+</form>
+</div>
+

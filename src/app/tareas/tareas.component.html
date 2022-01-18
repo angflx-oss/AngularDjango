@@ -1,0 +1,41 @@
+<div cdkDropListGroup class="ml-5">
+    <h1 class="text-light text-center">Tareas</h1>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 mb-4 mt-4">
+            <input type="text" [(ngModel)]="tarea" (keyup.enter)="addToDo()" class="form-control form-control-lg" placeholder="Ingresar tarea...">
+        </div>
+    </div>
+    <div class="example-container">
+      <h2 class="text-light">To do</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="todo"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box1" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+    <div class="example-container">
+        <h2 class="text-light">In Progress</h2>
+    
+        <div
+          cdkDropList
+          [cdkDropListData]="inprogress"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box2" *ngFor="let item of inprogress" cdkDrag>{{item}}</div>
+        </div>
+      </div>
+    <div class="example-container">
+      <h2 class="text-light">Done</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="done"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box3" *ngFor="let item of done" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  </div>

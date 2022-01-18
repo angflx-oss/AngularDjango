@@ -1,9 +1,10 @@
-import {NgxPaginationModule} from 'ngx-pagination';
 
+import { TagInputModule } from 'ngx-chips';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
@@ -57,6 +58,15 @@ import { EditPrebrigradistaComponent } from './brigadista/edit-prebrigradista/ed
 import { AddPrebrigradistaComponent } from './brigadista/add-prebrigradista/add-prebrigradista.component';
 import { MailBrigadistaComponent } from './brigadista/mail-brigadista/mail-brigadista.component';
 import { BrigadistasService } from './brigadista/service/brigadistas.service';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { InfBrigadistaComponent } from './brigadista/inf-brigadista/inf-brigadista.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SearchComponent } from './search/search.component';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { MailsComponent } from './mails/mails.component';
+import { TareasComponent } from './tareas/tareas.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -106,16 +116,29 @@ import { BrigadistasService } from './brigadista/service/brigadistas.service';
     ShowPrebrigradistaComponent,
     EditPrebrigradistaComponent,
     AddPrebrigradistaComponent,
-    MailBrigadistaComponent
+    MailBrigadistaComponent,
+    InfBrigadistaComponent,
+    LoginComponent,
+    DashboardComponent,
+    SearchComponent,
+    MailsComponent,
+    TareasComponent
   ],
-  imports: [
-    NgxPaginationModule,
+  imports: [    
+    
+    TagInputModule,
+    NgxPaginationModule,    
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
+    DragDropModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    AutocompleteLibModule,
+    
+    
    
   ],
   providers: [BrigadistasService],

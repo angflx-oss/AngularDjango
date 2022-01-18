@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Brigadista } from '../brigadista';
+import { Brigadista } from '../brigadista/brigadista';
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
-export class BrigadistasService {
+export class GeneralService {
 
   readonly APIUrl = "http://localhost:8000"
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
@@ -40,9 +41,15 @@ export class BrigadistasService {
     return this.http.get<any[]>(this.APIUrl + '/api/proyecto-list/');
   }
 
+  
 
   getBrigadistas():Observable<Brigadista[]>{
     return this.http.get<any[]>(this.APIUrl + '/api/brigadista-list/');
+  }
+
+  
+  getBrigadistaCount():Observable<any>{
+    return this.http.get<any[]>(this.APIUrl + '/api/brigadista-count/');
   }
   addBrigadista(data:Brigadista):Observable<any>{
     return this.http.post(this.APIUrl +'/api/brigadista-create/',data);

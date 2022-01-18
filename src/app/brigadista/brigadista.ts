@@ -33,3 +33,7 @@ export interface Prebrigadista {
     carrera:string;
     unidadacademica:string;    
 }
+export interface DataTag {
+    
+    name:string;    
+}

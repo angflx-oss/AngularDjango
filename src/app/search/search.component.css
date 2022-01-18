@@ -1,0 +1,15 @@
+.ng-autocomplete{
+    width: 50vh;
+    margin-top: 5%;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.2);
+    margin-left: 8%;
+}
+.container{
+    width: 100%;
+}
+h5{
+    margin-left: 10%;
+}
+.input{
+    width: 35%;
+}

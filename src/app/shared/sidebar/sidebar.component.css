@@ -1,6 +1,5 @@
 body{
-
-    overflow: hidden;
+    
     font-family: 'Poppins';
     font-weight: 300;
     color: var(--main-color);
@@ -10,6 +9,7 @@ body{
 }
 #sidebar-container{
     padding: 20px;
+    
     min-height: 100vh;
     box-shadow: 5px 10px 38px rgba(0,0,0,0.2);
 
@@ -22,7 +22,7 @@ body{
 }
 #sidebar-container .menu{
     margin-top: 4%;
-    width: 16rem;
+    width: 15rem;
     font-size: 0.8rem;
     letter-spacing: 1px;
 }
@@ -33,7 +33,6 @@ a:hover{
     max-width:35px ;
 }
 .content{
-    overflow-y: auto;
     height: 100vh;
     padding-bottom: 5rem;
 }

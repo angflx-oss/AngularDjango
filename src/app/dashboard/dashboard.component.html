@@ -1,0 +1,196 @@
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-m" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="exampleModalLongTitle">{{ModalTitle}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">                                                                                                         
+          <app-search></app-search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeClick()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-dark" id="exampleModalLongTitle">{{ModalTitle}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">                                                                                                         
+            <app-add-brigadista *ngIf="ActivateAdd"></app-add-brigadista>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeClick()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+        <div class="container-left">
+            <div class="cl-title">
+                <h1 class="text-light">Hola, Angela</h1>
+                <h3>¡Qué tengas un buen día de trabajo!</h3>
+            </div>
+            <div class="cl-buttons">
+                <button class="A1" routerLink="/unidadesreceptoras">U. Receptoras</button>
+                <button class="A2" routerLink="/dependencias">Dependencias</button>
+                <button class="A3" routerLink="/proyectos">Proyectos</button>
+            </div>
+            <div class="cl-landing">
+                <div class="cl-image">
+                    <img src="assets/images/Welcome-pana.png" alt="">
+                </div>
+                <div class="cl-choose">
+                    <p>Abrir sección de correos</p>
+                    <div class="dropdown">
+                        <button class="dropbtn"> <a routerLink="/mail" style="text-decoration: none; color: #FFFFFF;"><i class="fi fi-rr-envelope lead"></i></a>
+                        </button>                  
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="container-right">
+           
+            <div class="cr-ciclos">
+                <div class="cr-visual">
+                    <h3>{{brigadistasCount}}</h3> 
+                </div>
+                <div class="cr-cicloSelect">
+                    <h3 class="text-light">Brigadistas</h3>
+                    <div class="num ml-3">
+                        <h3 >{{count}}</h3>
+                        <h4>En proceso</h4>
+                    </div>
+                    <div class="num ml-3">
+                        <h3>{{countCiclos}}</h3>
+                        <h4>Ciclos Activos</h4>
+                    </div>
+                </div>
+                <div class="cr-cicloButtons">
+                    <div class="dropdown">                   
+                </div>                
+                    <button class="b2" data-toggle="modal" data-target="#exampleModalLong"><i class="fi fi-rr-search"></i></button>
+                    <button class="b2" style="background-color: #718CFF;" ><i class="fi fi-rr-plus"></i></button>
+                </div>
+            </div>
+            <div class="cr-moreoptions">                
+                    <button class="B2" routerLink="/asesores"><img src="assets/images/icons8-team-64.png" alt=""> Asesores</button>
+                    <button class="B1" routerLink="/unidadesacademicas"><img src="assets/images/icons8-business-report-100.png" alt=""> U. Académica</button>            
+                    <button class="B3" routerLink="/carreras"><img src="assets/images/icons8-business-report-100.png" alt=""> Carreras</button>            
+            </div>
+            <div class="cr-notes">
+                <h3>Tareas</h3>
+                <input type="search" id="site-search" name="q"
+                            aria-label="Search through site content">
+    
+                        <button>Buscar</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th >To Do:</th>
+                            <th>Leer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="text-light ml-3">Enviar correos</span>
+                            </td>
+                            <td>
+                                <button class="tB"><img src="assets/images/icons8-open-in-popup-64.png" alt=""></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-light ml-3">Actualizar página</span>
+                            </td>
+                            <td>
+                                <a routerLink="/tareas"><button class="tB"><img src="assets/images/icons8-open-in-popup-64.png" alt=""></button></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <ng-template #mymodal let-modal .modal-lg>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Añadir Brigadista</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <h3>2020-2021-1</h3>
+            <h4>Inscritos: </h4>
+            <p>250</p>
+            <h2>Concluidos:</h2>
+            <p>78</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+        </div>
+      </ng-template>
+      <ng-template #mymodal2 let-modal .modal-lg>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Añadir Ciclo</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <input type="text" placeholder="Ciclo">
+            <div class="box1">        
+                <div class="dropdown">
+                    <button class="dropbtn">Duración</button>
+                    <div class="dropdown-content">
+                      <a href="#">6 Meses</a>
+                      <a href="#">7 Meses</a>
+                      <a href="#">12 Meses</a>
+                    </div>
+                  </div>
+            </div>                
+            <div class="box1">        
+                <div class="dropdown">
+                    <button class="dropbtn">Status</button>
+                    <div class="dropdown-content">
+                      <a href="#">Activo</a>
+                      <a href="#">Concluido</a>                      
+                    </div>
+                  </div>
+            </div>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+        </div>
+      </ng-template>
+      <ng-template #mymodal3 let-modal .modal-lg>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Notas</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <h3>20/06/21</h3>
+            <h4>Envío Informe final</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+        </div>
+      </ng-template>
+    
+</body>

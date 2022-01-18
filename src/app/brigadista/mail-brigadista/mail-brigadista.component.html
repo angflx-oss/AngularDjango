@@ -1,31 +1,80 @@
-<div class="form-group" style="width: 100%;" ng-controller="checkController">
+<div class="form-group" style="width: 80%;" ng-controller="checkController">
     <span *ngIf="submitted && formData.invalid"></span>
     <form ngNativeValidate class="mt-1" [formGroup]="formData" (ngSubmit)="sendData()">
 
-         <div class="col-sm-10 row container-fluid mt-3">
-            <label for="" class="col-sm-10 text-dark col-form-label mt-2">Email</label>
-             <div class="col-sm-10">
-            <input required type="email" class="form-control" formControlName="email" placeholder="Ingresa el correo">
-             </div>
-        </div>
-
-        <div class="col-sm-10 row container-fluid mt-3">
-            <label for="" class="col-sm-10 text-dark col-form-label mt-2">Asunto</label>
-             <div class="col-sm-10">
-            <input required type="text" class="form-control" formControlName="subject" placeholder="">
-             </div>
-        </div>
-        <div class="col-sm-10 row container-fluid mt-3">
-            <label for="" class="col-sm-10 text-dark col-form-label mt-2">Mensaje</label>
-             <div class="col-sm-10">
-            <textarea formControlName="message" id="" cols="55" rows="5"></textarea>
-             </div>
+        <div class="mail-body">
+            
+            <h4>Email</h4>
+            <input type="email" class="form-control" formControlName="email">
+            <h4>Asunto</h4>
+            <input type="text" class="form-control" formControlName="subject">
+                <div class="answer">
+                    <textarea id="text" name="text" rows="12" cols="50" formControlName="message"></textarea>
+                    <div class="boxesT">
+                        <div class="box1">                    
+                            <div class="dropdown">
+                                <button class="dropbtn">Errores:</button>
+                              </div>
+                        </div>
+                        <div class="box2">                    
+                            <div class="dropdown">
+                                <button class="dropbtn">Nombre de Unidad Académica</button>                        
+                              </div>
+                        </div>
+                        <div class="box1">                    
+                            <div class="dropdown">
+                                <button class="dropbtn">Nombre de Unidad Receptora</button>                        
+                              </div>
+                        </div>
+                        
+                        <div class="box1">                    
+                            <div class="dropdown">
+                                <button class="dropbtn">Fecha de validación</button>                        
+                              </div>
+                        </div>
+                        <div class="box2">                    
+                            <div class="dropdown">
+                                <button class="dropbtn">Periodo del informe</button>                        
+                              </div>
+                        </div>
+                        <div class="box1">                    
+                            <div class="dropdown">
+                                <button class="dropbtn">Orden de los documentos</button>
+                              </div>
+                        </div>
+                        
+                        <div class="box1">                    
+                            <div class="dropdown">
+                                <button class="dropbtn">Nombre del proyecto</button>                        
+                              </div>
+                        </div>
+                        <div class="box2">                    
+                            <div class="dropdown">
+                                <button class="dropbtn">INFORME RECHAZADO</button>                        
+                              </div>
+                        </div>
+                        <div class="box1">                    
+                            <div class="dropdown">
+                                <button class="dropbtn">INFORME ACEPTADO</button>                        
+                              </div>
+                        </div>
+                        
+                    </div>
+                    <div class="mt-3 ml-3">
+                        <button type="submit" class="btn btn-dark btn-sm">Enviar</button>
+                    </div>        
+                </div>
         </div>
                 
         
-        <div class="mt-3 ml-3">
-            <button type="submit" class="btn btn-dark btn-sm">Enviar</button>
-        </div>
+        
         
     </form>
+
 </div>
+
+<!-- <div class="col-sm-10 ml-1">
+    <div cdkDropList class="example-list2" (cdkDropListDropped)="drop($event)" id="list-selected" [cdkDropListData]="Selectedtags" [cdkDropListConnectedTo]="['list-tags']">
+        <span class="example-box2" *ngFor="let item of Selectedtags" cdkDrag>{{item}}</span>
+      </div>
+ </div>  -->

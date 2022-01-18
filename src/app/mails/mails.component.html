@@ -1,0 +1,157 @@
+<div class="form-group" style="width: 80%;" ng-controller="checkController">
+    
+    <form [formGroup]="formData" (ngSubmit)="sendData()">
+<div class="container">
+    <div class="header">
+        <div class="title">
+            <h1 class="text-light">Correos</h1>                                
+        </div>    
+</div>
+<div class="options">
+    <div class="options-title">
+  
+        <div class="boxes">
+            <div class="box1">                    
+                <div class="dropdown">
+                    <button class="dropbtn">Informe mensual</button>
+                  </div>
+            </div>
+            <div class="box2">                    
+                <div class="dropdown">
+                    <button class="dropbtn">Informe final</button>                        
+                  </div>
+            </div>
+            <div class="box4">                    
+                <div class="dropdown">
+                    <button class="dropbtn">Dudas</button>                        
+                  </div>
+            </div>
+            <div class="box1">                    
+                <div class="dropdown">
+                    <button class="dropbtn">Rezago</button>
+                  </div>
+            </div>
+            <div class="box2">                    
+                <div class="dropdown">
+                    <button class="dropbtn">Proyecto</button>                        
+                  </div>
+            </div>
+           
+            
+        </div>
+    </div>            
+    
+</div>
+<div class="mailSection">
+    <div class="mail-preview">
+        <div class="preview">
+            <h2>Ana Laura Escalante</h2>
+            <h3>Rezago</h3>
+            <p>INFORME VERIFICADO
+            </p>
+        </div>
+        <div class="preview">
+            <h2>Jorge Montoya</h2>
+            <h3>Informe mensual</h3>
+            <p> Detalles en el informe...
+            </p>
+        </div>
+        <div class="preview">
+            <h2>Karely Aranda</h2>
+            <h3>Servicio Social</h3>
+            <p> Error en nombre de unidad académica
+            </p>
+        </div>
+        <div class="preview">
+            <h2>Mario Villafuente</h2>
+            <h3>Servicio Social</h3>
+            <p> Favor de checar el informe con su asesor
+            </p>
+        </div>
+    </div>
+    <div class="mail-body">
+        <h3> Email:
+        </h3>
+        <input type="email" class="form-control" formControlName="email">
+            <h3>Asunto</h3>
+            <input type="text" class="form-control" formControlName="subject">
+            
+            
+            <div class="answer">
+                <textarea id="text" name="text" rows="12" cols="50"></textarea>
+                <div class="boxesT">
+                    <div class="box1">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">Errores:</button>
+                          </div>
+                    </div>
+                    <div class="box2">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">Nombre de Unidad Académica</button>                        
+                          </div>
+                    </div>
+                    <div class="box1">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">Nombre de Unidad Receptora</button>                        
+                          </div>
+                    </div>
+                    <div class="box2">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">Fecha de Entrega</button>
+                          </div>
+                    </div>
+                    <div class="box1">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">Fecha de validación</button>                        
+                          </div>
+                    </div>
+                    <div class="box2">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">Periodo del informe</button>                        
+                          </div>
+                    </div>
+                    <div class="box1">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">Orden de los documentos</button>
+                          </div>
+                    </div>
+                    <div class="box2">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">Nombre del coordinador</button>                        
+                          </div>
+                    </div>
+                    <div class="box1">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">Nombre del proyecto</button>                        
+                          </div>
+                    </div>
+                    <div class="box2">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">INFORME RECHAZADO</button>                        
+                          </div>
+                    </div>
+                    <div class="box1">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">INFORME ACEPTADO</button>                        
+                          </div>
+                    </div>
+                    <div class="box2">                    
+                        <div class="dropdown">
+                            <button class="dropbtn">MÚLTIPLES ERRORES</button>                        
+                          </div>
+                    </div>
+                </div>
+                
+                <div class="send">
+                    <div class="box4">                    
+                        <div class="dropdown">
+                            <button class="dropbtn" type="submit">Enviar</button>                        
+                          </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+</form>
+</div>
